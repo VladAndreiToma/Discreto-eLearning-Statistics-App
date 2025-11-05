@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/*Containerul principal pentru desktop*/
+@media screen and (min-width:768px) {
+  .page-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 70%;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #00381f, #00190e 70%, #000 100%);
+    right: 0rem;
+    top: 0rem;
+  }
+  .page-scroller, .theory-scroller, .simulation-scroller, .about-scroller, .quiz-scroller{
+    flex:1; display:flex; flex-direction:column;  align-items:center; justify-content:flex-start; gap:5vh;
+    box-sizing:border-box; padding-top:1rem;  padding-bottom:1rem;  padding-right: 2.5rem;  padding-left: 2.5rem; height:auto;  text-align: center;
+  }
+    .glass-box { backdrop-filter: blur(12px); background: rgba(0,255,120,0.08); border: 1px solid rgba(0,255,150,0.2); border-radius:16px; width:90%; height:auto; display:flex; flex-direction:column; justify-content:center; align-items:center; box-sizing:border-box; padding:2rem; box-shadow:0 4px 25px rgba(0,255,100,0.15); transition:0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; text-align:center; gap:1rem; }
+    .glass-box:hover { box-shadow:0 0 35px rgba(0,255,140,0.3), inset 0 0 15px rgba(0,255,100,0.2); transform:translateY(-3px); }
+    .glass-box label { font-size:1.8rem; font-weight:500; color:#f0f0f0; line-height:1.4; text-align:center; }
+    .glass-box h2 { font-size:4rem; font-weight:700; color:#f8f8f8; margin-bottom:1rem; }
+    .features-list-discreto { list-style:none; padding-left:0; margin:1rem 0 0 0; width:100%; }
+    .features-list-discreto li { position:relative; margin-bottom:1rem; line-height:1.5; color:#f5f5f5; font-size:1.5rem; font-weight:500; padding-left:2rem; text-align:left; }
+    .features-list-discreto li::before { content:"•"; position:absolute; left:0; color:#00ff99; font-weight:700; font-size:1.5rem; }
+  .theory-scroller section,
+  .simulation-scroller section,
+  .quiz-scroller section,
+  .about-scroller section {
+    width: 90%; /* 90% din container */
+    max-width: 90%; /* prevenim depășirea */
+    background: rgba(0, 255, 120, 0.1); /* același verde ca glass-box */
+    backdrop-filter: blur(12px); /* efect glass */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 150, 0.2);
+    border-radius: 16px;
+    padding: 2rem; /* suficient spațiu pentru text */
+    box-shadow: 0 4px 30px rgba(0, 255, 100, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    font-size: 1.3rem; /* text mai mare */
+    color: #dde; /* aproape alb, clar */
+    text-align: center;
+  }
+  .katex-display{
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .theory-scroller h1{
+    font-size: 4rem;
+    width: 78%;
+    font-weight: bold;
+  }
+  .theory-scroller h3{
+    font-size: 2rem;
+    font-weight:  bold;
+  }
+  .theory-scroller ul {
+    list-style: disc;     /* sau none dacă nu vrei buline */
+    padding-left: 1rem; /* cât vrei tu */
+    margin: 0;            /* elimină marginile implicite */
+    text-align: left;     /* aliniază textul la stânga */
+  }
+
+    .theory-scroller ul li {
+    text-align: left;     /* asigură că fiecare li e tot la stânga */
+  }
+
+}
+
+
+/*containerul pt mobil*/
+@media screen and (max-width:768px) {
+  .page-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #00381f, #00190e 70%, #000 100%);
+  }
+  .page-scroller, .theory-scroller, .simulation-scroller, .about-scroller, .quiz-scroller{
+    flex:1;display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    gap:5vh;
+    box-sizing:border-box;
+    padding-top:7rem;
+    padding-bottom:5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    height:auto;
+    text-align: center;
+  }
+  .glass-box { backdrop-filter: blur(12px); background: rgba(0,255,120,0.1); border: 1px solid rgba(0,255,150,0.2); border-radius:16px; color:#dfffe9; width:90%; height:auto; display:flex; flex-direction:column; justify-content:center; align-items:center; box-sizing:border-box; padding:2rem; box-shadow:0 4px 30px rgba(0,255,100,0.15); transition:0.3s ease; text-align:center; gap:1rem; }
+  .glass-box { 
+    backdrop-filter: blur(12px); background: rgba(0,255,120,0.1); border: 1px solid rgba(0,255,150,0.2); border-radius:16px;
+    width:90%; height:auto; display:flex; flex-direction:column; justify-content:center;
+    align-items:center; box-sizing:border-box; padding:2rem; box-shadow:0 4px 30px rgba(0,255,100,0.15); transition:0.3s ease; text-align:center; gap:1rem;
+  }
+  .glass-box:hover {
+    box-shadow: 0 0 25px rgba(16, 181, 19, 0.655);
+    transform: translateY(-3px);
+  }
+
+    /* Optional: text styling */
+    .glass-box label {
+      font-size: 1.1rem;
+      color: #dde;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    }
+  .theory-scroller section, .simulation-scroller section, .quiz-scroller section, .about-scroller section{
+    width: 100%; /* 90% din container */
+    background: rgba(0, 255, 120, 0.1); /* același verde ca glass-box */
+    backdrop-filter: blur(12px); /* efect glass */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 150, 0.2);
+    border-radius: 16px;
+    padding: 2rem 1.8rem; /* suficient spațiu pentru text */
+    box-shadow: 0 4px 30px rgba(0, 255, 100, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    font-size: 1rem; /* text mai mare */
+    color: #dde; /* aproape alb, clar */
+    text-align: center;
+  }
+
+  /*Punem mascota ba pe dreapta ba pe stanga in home*/
+  .mascot{
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    top: 3rem;
+    z-index: 0;
+  }
+}
+
+
+
+ .formula {
+    background: rgba(0, 25, 10, 0.6); /* verde închis translucid */
+    border: 1px solid transparent;
+    border-image: linear-gradient(120deg, #00ff88, #00cc55, #008844) 1; /* neon → smarald → verde adânc */
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.6rem;
+    color: #ccffdd; /* text verde deschis */
+    text-align: center;
+    backdrop-filter: blur(10px) brightness(1.15);
+    box-shadow: 0 0 20px rgba(0, 255, 100, 0.1),
+                inset 0 0 20px rgba(0, 255, 150, 0.1);
+    transition: all 0.25s ease-in-out;
+  }
+  .formula:hover {
+    transform: scale(1.02);
+    border-image: linear-gradient(120deg, #00ffaa, #55ff77, #aaffaa) 1;
+    box-shadow: 0 0 35px rgba(0, 255, 150, 0.25),
+                inset 0 0 25px rgba(0, 255, 150, 0.15);
+    color: #eaffee;
+  }
+
+
+
+.features-list-discreto {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.features-list-discreto li {
+  position: relative;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  color: rgba(220, 230, 245, 0.9);
+  padding-left: 26px;
+}
+
+/* soft glowing bullet */
+.features-list-discreto li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(circle, #6fffe9 0%, #3aa0ff 50%, #7d5bff 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(110, 200, 255, 0.7), 0 0 12px rgba(140, 100, 255, 0.4);
+}
+
+/* subtle gradient highlight for <b> */
+.features-list-discreto b {
+  background: linear-gradient(90deg, #5efce8, #736efe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.chapter-title{
+  text-align: center;
+  z-index: 2;
+  font-size: 2.2rem;
+  width: 80%;
+}
+
+
+
+.formula {
+  background: rgba(0, 25, 10, 0.6); /* verde închis translucid */
+  border: 1px solid transparent;
+  border-image: linear-gradient(120deg, #00ff88, #00cc55, #008844) 1; /* neon → smarald → verde adânc */
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.6rem;
+  color: #ccffdd; /* text verde deschis */
+  text-align: center;
+  backdrop-filter: blur(10px) brightness(1.15);
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.1),
+              inset 0 0 20px rgba(0, 255, 150, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+.formula:hover {
+  transform: scale(1.02);
+  border-image: linear-gradient(120deg, #00ffaa, #55ff77, #aaffaa) 1;
+  box-shadow: 0 0 35px rgba(0, 255, 150, 0.25),
+              inset 0 0 25px rgba(0, 255, 150, 0.15);
+  color: #eaffee;
+}
+
+
+
+.pumping-table {
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: rgba(0, 20, 0, 0.5);
+  border: 1px solid transparent;
+  border-image: linear-gradient(120deg, #00ff88, #00cc55, #00ffaa) 1;
+  box-shadow: 0 0 25px rgba(0, 255, 120, 0.2);
+  backdrop-filter: blur(6px);
+  color: #d4ffd4;
+  box-sizing: border-box;
+  font-size: 0.6rem;
+}
+.pumping-table th, .pumping-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 255, 120, 0.2);
+  text-align: left;
+}
+.pumping-table th {
+  color: #b8ffc8;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background: rgba(0, 50, 0, 0.4);
+}
+.pumping-table tr:hover {
+  background: rgba(0, 100, 0, 0.3);
+  transform: scale(1.01);
+  transition: all 0.25s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*parted de desktop stilizata pt navbar*/
+/* DesktopNav.css */
+.desktop-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #001a0f 0%, #003320 50%, #001a0f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 0 15px rgba(0,255,140,0.25);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 10;
+  gap:2rem;
+  box-sizing: border-box;
+}
+/* Logo */
+.desktop-nav .logo {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,255,140,0.6);
+  margin-bottom: 2rem;
+  object-fit: cover;
+}
+/* Menu container */
+.desktop-nav .menu-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+/* Menu link */
+.desktop-nav .menu-links a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  background: rgba(0, 20, 10, 0.4);
+  box-shadow: inset 0 0 5px rgba(0,255,140,0.15);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+/* Hover effect */
+.desktop-nav .menu-links a:hover {
+  color: #00ff99;
+  text-shadow: 0 0 8px #00ff99;
+  border-left: 3px solid #00ff99;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,255,140,0.6);
+}
+/* Active / focus effect (optional) */
+.desktop-nav .menu-links a:focus {
+  outline: none;
+  color: #00ff99;
+  border-left: 3px solid #00ff99;
+}
+
+/* Optional: media query for very small screens */
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    width: 100vw;
+    height: 11vh; /* se poate adapta pentru mobil */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .desktop-nav .logo {
+    height: 100%;
+    width: auto;
+    margin-bottom: 0;
+  }
+  .desktop-nav .menu-links {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .desktop-nav .menu-links a {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+
+
+
+
+
+
+
+/*Mobile Components styling*/
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 11vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(90deg,#001a0f 0%,#003320 50%,#001a0f 100%);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 101; /* navbar deasupra meniului */
+  box-shadow: 0 0 15px rgba(0,255,140,0.25);
+  backdrop-filter: blur(10px);
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(160deg, rgba(0,30,20,1), rgba(0,10,5,1));
+  font-family: 'Orbitron';
+  backdrop-filter: blur(15px);
+  animation: slideIn 0.3s ease forwards;
+  z-index: 100; /* sub navbar */
+  text-align: center;
+  padding-top: 11vh; /* să nu stea linkurile sub navbar */
+}
+.mobile-menu a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+.mobile-menu a:hover {
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+  transform: scale(1.1);
+}

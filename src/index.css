@@ -1,0 +1,92 @@
+:root {
+  background-color: #000;
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+/*navigatia pe mobil --- in parte superioara cu meniu burger si x*/
+/* MobileNav.css */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 11vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(90deg,#001a0f 0%,#003320 50%,#001a0f 100%);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(0,255,140,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-logo {
+  height: 100%;
+  width: 32%;
+  object-fit: cover;
+}
+
+.menu-toggle {
+  font-size: 1.8rem;
+  color: #baffd9;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  display: flex;
+  width: 25%;
+  height: 100%;
+  align-items: center;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 11vh;
+  right: 0;
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: linear-gradient(160deg,rgba(0,30,20,1),rgba(0,10,5,1));
+  backdrop-filter: blur(15px);
+  animation: slideIn 0.3s ease;
+  z-index: 100;
+}
+.mobile-menu a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+.mobile-menu a:hover {
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+  transform: scale(1.1);
+}
+/* Slide-in keyframes */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
